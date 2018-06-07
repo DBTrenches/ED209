@@ -1,0 +1,13 @@
+{
+    "Identifier": "Utility-ED209.KillLongRunningQueries",
+    "TSQLCommand": "exec Utility.ED209.KillLongRunningQueries",
+    "StartTime": "00:00:00",
+    "FrequencyType": 3,
+    "FrequencyTypeDesc": "Minute",
+    "FrequencyInterval": 10,
+    "NotifyOnFailureOperator": "AdminOperator",
+    "IsNotifyOnFailure": true,
+    "IsEnabled": true,
+    "IsDeleted": false,
+    "NotifyLevelEventlog": 2
+}

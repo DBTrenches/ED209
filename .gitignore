@@ -1,0 +1,4 @@
+
+deploy/config/*
+!deploy/config/*.SAMPLE.*
+!deploy/config/config.json

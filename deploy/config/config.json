@@ -1,0 +1,28 @@
+[{
+    "ConfigID": 1,
+    "ConfigName": "LoginDomainToReplace"
+},
+{
+    "ConfigID": 2,
+    "ConfigName": "UsersToRedirect"
+},
+{
+    "ConfigID": 3,
+    "ConfigName": "IsSafeModeOn"
+},
+{
+    "ConfigID": 4,
+    "ConfigName": "DefaultNotificationAddress"
+},
+{
+    "ConfigID": 5,
+    "ConfigName": "UserQueryRunTimeLimits(Mins)"
+},
+{
+    "ConfigID": 6,
+    "ConfigName": "IsDoNotMail"
+},
+{
+    "ConfigID": 7,
+    "ConfigName": "TransactionDurationLimit(Mins)"
+}]

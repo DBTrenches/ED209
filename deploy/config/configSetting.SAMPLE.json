@@ -1,0 +1,36 @@
+[{
+    "ConfigID": 1,
+    "Setting1": "contoso\\",
+    "Setting2": "@contoso.com"
+},
+{
+    "ConfigID": 3,
+    "Setting1": "0"
+},
+{
+    "ConfigID": 4,
+    "Setting1": "DatabaseAdmins@contoso.com"
+},
+{
+    "ConfigID": 5,
+    "Setting2": "45"
+},
+{
+    "ConfigID": 5,
+    "Setting1": "SQLServer.Service",
+    "Setting2": "90"
+},
+{
+    "ConfigID": 5,
+    "Setting1": "ReportServer.Service",
+    "Setting2": "20"
+},
+{
+    "ConfigID": 5,
+    "Setting1": "contoso.proxy",
+    "Setting2": "90"
+},
+{
+    "ConfigID": 6,
+    "Setting1": "0"
+}]

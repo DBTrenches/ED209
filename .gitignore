@@ -2,3 +2,5 @@
 deploy/config/*
 !deploy/config/*.SAMPLE.*
 !deploy/config/config.json
+deploy/task/SchedulerTask.json
+deploy/task/AgentJob.sql

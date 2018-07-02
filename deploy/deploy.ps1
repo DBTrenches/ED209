@@ -85,3 +85,25 @@ if($deployConfig -eq "Y"){
         }
     }
 }
+
+if(Get-Command Publish-TaskFromConfig -ErrorAction SilentlyContinue){
+    try{
+        Publish-TaskFromConfig @conn -config "$here/task/SchedulerTask.json"
+    }
+    catch {
+        Copy-Item -Path "$here/task/SchedulerTask.example.json" -Destination "$here/task/SchedulerTask.json"
+        notepad "$here/task/SchedulerTask.json"
+        Write-Warning "Scheduler solution has been deployed but no CONFIG file found in repo."
+        Write-Warning "Please update the SchedulerTask.json and publish with the below command"
+        Write-Host "    Publish-TaskFromConfig -server '$server' -database '$database' -config '$here/task/SchedulerTask.json'" -ForegroundColor Green
+    }
+}else{
+    try {
+        Invoke-Sqlcmd @conn -InputFile "$here/task/AgentJob.sql"
+    }
+    catch {
+        Copy-Item -Path "$here/task/AgentJob.example.sql" -Destination "$here/task/AgentJob.sql"
+        ssms "$here/task/AgentJob.sql"
+        Write-Warning "Job not deployed, please update Write-Warning AgentJob.sql with the appropriate values and deploy."
+    }
+}

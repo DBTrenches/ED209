@@ -30,3 +30,9 @@ go
 "@
 
 Invoke-Sqlcmd @conn -Query $query
+
+if(Get-Command Publish-TaskFromConfig -ErrorAction SilentlyContinue){
+    Invoke-Sqlcmd @conn "exec scheduler.DisableTask @task = '$Database-ED209.KillLongRunningQueries';"
+}
+
+Invoke-Sqlcmd @conn -Query "exec msdb_delete_job @job_name = '$Database-ED209.KillLongRunningQueries';" -ErrorAction SilentlyContinue

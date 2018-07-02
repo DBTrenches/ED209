@@ -8,3 +8,7 @@ The **Enforcement Droid, Series 209**, or **ED-209**, are a fully-automated seri
 
 `.\deploy\deploy.ps1`
 
+## Removal
+
+`.\deploy\uninstall.ps1`
+

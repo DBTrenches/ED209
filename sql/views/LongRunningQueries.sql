@@ -25,12 +25,13 @@ outer apply (
         and cs.Setting1 is null
 ) e2
 outer apply (
-    select JobName = concat('Job: ', j.name)
-    from msdb.dbo.sysjobs j
+    select JobName = concat('Job: ', j.name), CategoryName = c.name
+    from msdb.dbo.sysjobs             j
+    inner join msdb.dbo.syscategories c on c.category_id = j.category_id
     where j.job_id = try_convert(uniqueidentifier, try_convert(varbinary(16), (substring(s.program_name, charindex('0x', s.program_name, 0), 34)), 1))
 ) sj
 where r.status in ('running', 'runnable', 'suspended')
-    and (sj.JobName not like '%cdc.%' or sj.JobName is null)
+    and ((sj.JobName not like '%cdc.%' and sj.CategoryName not like 'REPL-%') or sj.JobName is null)
     and s.spid not in (select shp.Spid from ED209.SpidHallPass shp where shp.Expires > getutcdate())
     and r.database_id > 5
     and r.command in (
